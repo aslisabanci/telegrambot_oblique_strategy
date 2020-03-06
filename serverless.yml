@@ -1,0 +1,27 @@
+service: serverless-obliqueBeniBot
+
+provider:
+  name: aws
+  runtime: python3.8
+  role: arn:aws:iam::510608237778:role/service-role/obliqueBeniLambda-role-i5qf6tlx
+  stage: dev
+  region: us-west-1
+  environment:
+    TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
+
+functions:
+  welcomer:
+    handler: welcomer.lambda_handler
+    events:
+      - http:
+          path: welcomer
+          method: post
+          cors: true
+
+  obliquer:
+    handler: obliquer.lambda_handler
+    events:
+      - http:
+          path: obliquer
+          method: post
+          cors: true
