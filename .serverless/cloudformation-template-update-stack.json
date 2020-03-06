@@ -75,7 +75,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-obliqueBeniBot/dev/1583534477637-2020-03-06T22:41:17.637Z/serverless-obliqueBeniBot.zip"
+          "S3Key": "serverless/serverless-obliqueBeniBot/dev/1583537409031-2020-03-06T23:30:09.031Z/serverless-obliqueBeniBot.zip"
         },
         "FunctionName": "serverless-obliqueBeniBot-dev-welcomer",
         "Handler": "welcomer.lambda_handler",
@@ -93,14 +93,14 @@
         "WelcomerLogGroup"
       ]
     },
-    "WelcomerLambdaVersionOTmbjUB8IUG30arOWdX0osTeys4lMuwZXE0PxWvsQ": {
+    "WelcomerLambdaVersiontoNh3RpwfCGvy8PshhQoUhjQh3hKB33MA0jvTj0EQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WelcomerLambdaFunction"
         },
-        "CodeSha256": "EkfGG1T8Anv7KwT3J/l9wi3cf45Qtyg0eq/5FG2RzI4="
+        "CodeSha256": "SQ02vSMYil0ujSr9zSnykXRed1OZfqUz0ClF2AXn/zI="
       }
     },
     "ObliquerLambdaFunction": {
@@ -110,7 +110,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-obliqueBeniBot/dev/1583534477637-2020-03-06T22:41:17.637Z/serverless-obliqueBeniBot.zip"
+          "S3Key": "serverless/serverless-obliqueBeniBot/dev/1583537409031-2020-03-06T23:30:09.031Z/serverless-obliqueBeniBot.zip"
         },
         "FunctionName": "serverless-obliqueBeniBot-dev-obliquer",
         "Handler": "obliquer.lambda_handler",
@@ -128,14 +128,14 @@
         "ObliquerLogGroup"
       ]
     },
-    "ObliquerLambdaVersion9NpVSy48GnkbhdDkttezjZ4EiGf0T0M4sd8Sd0Is": {
+    "ObliquerLambdaVersionxHnVi4czwHor1CRSn753FQCf6xVxjCXN1Lggbyr4Uo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ObliquerLambdaFunction"
         },
-        "CodeSha256": "EkfGG1T8Anv7KwT3J/l9wi3cf45Qtyg0eq/5FG2RzI4="
+        "CodeSha256": "SQ02vSMYil0ujSr9zSnykXRed1OZfqUz0ClF2AXn/zI="
       }
     },
     "ApiGatewayRestApi": {
@@ -356,7 +356,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1583534473801": {
+    "ApiGatewayDeployment1583537405677": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -455,13 +455,13 @@
     "WelcomerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WelcomerLambdaVersionOTmbjUB8IUG30arOWdX0osTeys4lMuwZXE0PxWvsQ"
+        "Ref": "WelcomerLambdaVersiontoNh3RpwfCGvy8PshhQoUhjQh3hKB33MA0jvTj0EQ"
       }
     },
     "ObliquerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ObliquerLambdaVersion9NpVSy48GnkbhdDkttezjZ4EiGf0T0M4sd8Sd0Is"
+        "Ref": "ObliquerLambdaVersionxHnVi4czwHor1CRSn753FQCf6xVxjCXN1Lggbyr4Uo"
       }
     },
     "ServiceEndpoint": {

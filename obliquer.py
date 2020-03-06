@@ -21,45 +21,13 @@ dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table("oblique_beni")
 
 
-NEXT_SCHEDULE_MIN_DELAY = 4
-NEXT_SCHEDULE_MAX_DELAY = 6
-NEXT_SCHEDULE_EARLIEST_HOUR = 8
-NEXT_SCHEDULE_LATEST_HOUR = 23
-HOURS_ON_EARTH = 24  #:P
-
-
-def calculate_postpone(current_hour: int) -> int:
-    """Calculate the postponed hours if necessary, taking the PST hours into account.
-
-    The intention is to send the oblique strategies during the daytime and sleep during the night.
-    However, this bot is only intended to be a gift to my husband and we live in PST.
-    So the perks only apply to us >;)
-    """
-    if current_hour > NEXT_SCHEDULE_LATEST_HOUR - NEXT_SCHEDULE_MAX_DELAY:
-        return (
-            HOURS_ON_EARTH
-            - current_hour
-            + NEXT_SCHEDULE_EARLIEST_HOUR
-            - NEXT_SCHEDULE_MIN_DELAY
-        )
-    return 0
+NEXT_SCHEDULE_MIN_DELAY = 18
+NEXT_SCHEDULE_MAX_DELAY = 30
 
 
 def calculate_next_schedule() -> int:
-    """Calculate how many minutes after the next run would be, taking the extra sleep time into account. 
-
-    For the sleep details, check calculate_postpone function.
-    """
-    utc_now = datetime.datetime.now(datetime.timezone.utc)
-    pacific_now = utc_now.astimezone(pytz.timezone("US/Pacific"))
-    pacific_hour = pacific_now.hour
-    postponed_hours = calculate_postpone(pacific_hour)
-    logging.info(f"Postponed hours is {postponed_hours}")
-
-    return random.randint(
-        (postponed_hours + NEXT_SCHEDULE_MIN_DELAY) * 60,
-        (postponed_hours + NEXT_SCHEDULE_MAX_DELAY) * 60,
-    )
+    """Calculate how many minutes after the next run would be."""
+    return random.randint(NEXT_SCHEDULE_MIN_DELAY * 60, NEXT_SCHEDULE_MAX_DELAY * 60)
 
 
 FN_NAME = "serverless-obliqueBeniBot-dev-obliquer"
