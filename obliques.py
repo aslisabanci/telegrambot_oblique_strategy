@@ -1,7 +1,6 @@
 import random
 
 OBLIQUES = [
-    "Anam oblik yerine surpriz opik gelmis! mihmihmihmihmih u.u",
     "Abandon normal instruments",
     "Accept advice",
     "Accretion",
